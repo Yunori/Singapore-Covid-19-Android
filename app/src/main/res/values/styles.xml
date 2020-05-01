@@ -1,0 +1,15 @@
+<resources>
+    <color name="white_opaque">#FFFFFFFF</color>
+    <color name="pitch_black">#729DAD</color>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/accent</item>
+        <item name="android:windowBackground">@color/pitch_black</item>
+        <item name="android:colorBackground">@color/pitch_black</item>
+        <item name="android:textColor">@color/white_opaque</item>
+    </style>
+
+</resources>

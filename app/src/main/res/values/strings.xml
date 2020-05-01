@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Singapore covid tracker</string>
+    <string name="Title">Singapore COVID-19 statistics</string>
+    <string name="ConfirmedCases">Confirmed cases</string>
+    <string name="ActiveCases">Active</string>
+    <string name="RecoveredCases">Recovered</string>
+    <string name="Deaths">Deaths</string>
+    <string name="Map">Infection map</string>
+    <string name="List">Infected list </string>
+    <string name="Hospital">Hospital: </string>
+    <string name="Type">Type: </string>
+    <string name="Placesvisited">Places visited: </string>
+    <string name="Age">Age: </string>
+    <string name="Gender">Gender: </string>
+    <string name="Nationality">Nationality: </string>
+    <string name="Doc">Date of infection: </string>
+    <string name="Dod">Date of release: </string>
+</resources>
