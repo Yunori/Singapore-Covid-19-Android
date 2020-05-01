@@ -23,13 +23,13 @@ Same as the government API, this data might be 1 or 2 days late.
 <div style="text-align:center">
 <h4>MainActivity</h4>
 <img src="https://github.com/Yunori/Singapore-Covid-19-Android/blob/master/screenshots/MainActivity.jpg?raw=true" width="200" height="400" />
-This activity shows the main stats. Below the title, you can see the date of the last update of the data.
-This activity will check if you have the permissions and an active internet connection before showing the data.
+<p>This activity shows the main stats. Below the title, you can see the date of the last update of the data.
+This activity will check if you have the permissions and an active internet connection before showing the data.</p>
 <h4>MapActivity</h4>
 <img src="https://github.com/Yunori/Singapore-Covid-19-Android/blob/master/screenshots/MapActivity.jpg?raw=true" width="200" height="400" />
-This activity shows the detailed data about the infected. I used a recycler view to build this view.
+<p>This activity shows the detailed data about the infected. I used a recycler view to build this view.</p>
 <h4>ListActivity</h4>
 <img src="https://github.com/Yunori/Singapore-Covid-19-Android/blob/master/screenshots/ListActivity.jpg?raw=true" width="200" height="400" />
-This activity uses OpenStreetMap and Mapbox. I draw a colored circle for the group of infected and polygons for the infection clusters (e.g., Changi airport).
-When you zoom on the map, the group of infected splits into smaller parts. When the group is disbanded, I draw a small red circle to show the original position of the infected person. Some people are infected at the same location, so the group will not be disbanded even if you zoom at the maximum.
+<p>This activity uses OpenStreetMap and Mapbox. I draw a colored circle for the group of infected and polygons for the infection clusters (e.g., Changi airport).
+When you zoom on the map, the group of infected splits into smaller parts. When the group is disbanded, I draw a small red circle to show the original position of the infected person. Some people are infected at the same location, so the group will not be disbanded even if you zoom at the maximum.</p>
 </div>
