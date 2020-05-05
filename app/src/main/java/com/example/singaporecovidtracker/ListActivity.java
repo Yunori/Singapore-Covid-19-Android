@@ -17,8 +17,7 @@ import java.util.ArrayList;
 public class ListActivity extends AppCompatActivity {
     private RecyclerView rv;
     ArrayList<Infected> objects;
-    String url = "https://services6.arcgis.com/LZwBmoXba0zrRap7/arcgis/rest/services/COVID_19_Prod_feature/FeatureServer/0/query?f=json&where=1%3D1&returnGeometry=false&spatialRel=esriSpatialRelIntersects&outFields=%2A&orderByFields=Case_ID%20desc&resultOffset=0&resultRecordCount=9999&resultType=standard&cacheHint=true";
-    int reqno = 1;
+    String url = "https://raw.githubusercontent.com/wentjun/covid-19-sg/master/src/data/covid-sg.json";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,11 +35,6 @@ public class ListActivity extends AppCompatActivity {
 
                     @Override
                     public void onResponse(JSONObject response) {
-                            if(reqno == 1 && response.has("error")) {
-                                url = "https://services6.arcgis.com/LZwBmoXba0zrRap7/arcgis/rest/services/COVID_19_Prod_B_feature/FeatureServer/0/query?f=json&where=1%3D1&returnGeometry=false&spatialRel=esriSpatialRelIntersects&outFields=%2A&orderByFields=Case_ID%20desc&resultOffset=0&resultRecordCount=9999&resultType=standard&cacheHint=true";
-                                reqno = 2;
-                                request();
-                            }
                         try {
                             if(response.has("features")) {
                                 JSONArray cases = response.getJSONArray("features");

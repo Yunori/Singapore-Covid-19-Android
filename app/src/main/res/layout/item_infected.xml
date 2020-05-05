@@ -42,7 +42,8 @@
         android:layout_weight="0.1"
         android:textSize="20sp"
         android:lines="1"
-        app:layout_constraintBottom_toTopOf="@+id/guidelineh"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineh2"
         app:layout_constraintEnd_toStartOf="@+id/guidelinev"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -52,8 +53,10 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="0.1"
+        android:textSize="20sp"
         android:lines="2"
-        app:layout_constraintBottom_toTopOf="@id/guidelineh3"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guidelinev"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/guidelineh2" />
@@ -64,6 +67,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="0.1"
         android:lines="2"
+        android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/guidelineh"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/guidelinev"
@@ -75,6 +79,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="0.1"
         android:lines="2"
+        android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/guidelineh2"
         app:layout_constraintEnd_toStartOf="@+id/infected_gender"
         app:layout_constraintStart_toEndOf="@+id/guidelinev"
@@ -86,6 +91,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="0.1"
         android:lines="2"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="@+id/infected_age"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/infected_age"
@@ -97,32 +103,23 @@
         android:layout_height="wrap_content"
         android:layout_weight="0.1"
         android:lines="2"
+        android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/guidelineh3"
-        app:layout_constraintEnd_toStartOf="@+id/infected_place"
+        app:layout_constraintEnd_toStartOf="@+id/infected_death"
         app:layout_constraintStart_toEndOf="@+id/guidelinev"
         app:layout_constraintTop_toBottomOf="@+id/guidelineh2" />
 
     <TextView
-        android:id="@+id/infected_place"
+        android:id="@+id/infected_death"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="0.1"
         android:lines="2"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="@+id/infected_imported"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/infected_imported"
         app:layout_constraintTop_toTopOf="@+id/infected_imported" />
-
-    <TextView
-        android:id="@+id/infected_hospital"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.1"
-        android:lines="2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/guidelinev"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/guidelineh3" />
 
     <TextView
         android:id="@+id/infected_doc"
@@ -130,6 +127,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="0.1"
         android:lines="2"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/infected_dod"
         app:layout_constraintStart_toEndOf="@+id/guidelinev"
@@ -141,6 +139,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="0.1"
         android:lines="2"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="@+id/infected_doc"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/infected_doc"

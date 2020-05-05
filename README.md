@@ -1,5 +1,10 @@
 # Singapore Covid-19 Tracker
 
+## Update 05/05/2020
+The app now uses this file for the list activity: https://raw.githubusercontent.com/wentjun/covid-19-sg/master/src/data/covid-sg.json
+This file provides details for cases 1 to 6588.
+
+## Update 26/04/2020
 Note: The "ListActivity" does not works anymore because the governement closed the API on Saturday 25 April.
 You can check the API status at this URL: https://experience.arcgis.com/experience/7e30edc490a5441a874f9efe67bd8b89
 Same for the MapActivity, all the infected postions added after the 25 April will be set to the defaut value (around the center of SG). So they don't show the real location of the new infections.
@@ -7,7 +12,7 @@ Same for the MapActivity, all the infected postions added after the 25 April wil
 ### Presentation
 
 Singapore COVID Tracker is an android application that allows users to follow the situation of the infection in Singapore, thanks to various sources.
-I use Volley to gather JSON files from three different API:
+I use Volley to gather JSON files:
 -	https://github.com/NovelCOVID/API
 This API provides the most up to date main stats about the decease.
 

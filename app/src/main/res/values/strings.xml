@@ -13,6 +13,7 @@
     <string name="Age">Age: </string>
     <string name="Gender">Gender: </string>
     <string name="Nationality">Nationality: </string>
-    <string name="Doc">Date of infection: </string>
-    <string name="Dod">Date of release: </string>
+    <string name="Doc">Confirmed: </string>
+    <string name="Dod">Discharged: </string>
+    <string name="Dodeath">Death: </string>
 </resources>

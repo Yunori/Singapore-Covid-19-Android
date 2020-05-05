@@ -12,19 +12,19 @@ class Infected {
     private String mAge;
     private String mNationality;
     private String mGender;
-    private String mStatus;
+    private String mDeath;
     private String mDateContaminated;
     private String mDateDischarged;
     private String mImported;
     private String mPlace;
 
-    private Infected(String id, String hospital, String imported, String place, String age, String gender, String nationality, String status, String dateContaminated, String dateDischarged) {
+    private Infected(String id, String hospital, String imported, String place, String age, String gender, String nationality, String death, String dateContaminated, String dateDischarged) {
         mId = id;
         mHospital = hospital;
         mAge = age;
         mNationality = nationality;
         mGender = gender;
-        mStatus = status;
+        mDeath = death;
         mDateContaminated = dateContaminated;
         mDateDischarged = dateDischarged;
         mImported = imported;
@@ -46,13 +46,11 @@ class Infected {
     String getGender() {
         return mGender;
     }
-    String getStatus() {
-        return mStatus;
+    String getDeath() {
+        return mDeath;
     }
     String getDateContaminated() {
-        Date df = new java.util.Date(Long.parseLong(mDateContaminated));
-        String sd = new SimpleDateFormat("dd-MM-yyyy").format(df);
-        return sd;
+        return mDateContaminated;
     }
     String getDateDischarged() {
         return mDateDischarged;
@@ -69,21 +67,24 @@ class Infected {
 
         for (int i = 0; i < cases.length(); i++) {
             try {
-                Infected.add(new Infected(cases.getJSONObject(i).getJSONObject("attributes").get("Case_ID").toString(),
-                        cases.getJSONObject(i).getJSONObject("attributes").get("Current_Lo").toString(),
-                        cases.getJSONObject(i).getJSONObject("attributes").get("Imported_o").toString(),
-                        cases.getJSONObject(i).getJSONObject("attributes").get("Place").toString(),
-                        cases.getJSONObject(i).getJSONObject("attributes").get("Age").toString(),
-                        cases.getJSONObject(i).getJSONObject("attributes").get("Gender").toString(),
-                        cases.getJSONObject(i).getJSONObject("attributes").get("Nationalit").toString(),
-                        cases.getJSONObject(i).getJSONObject("attributes").get("Status").toString(),
-                        cases.getJSONObject(i).getJSONObject("attributes").get("Date_of_Co").toString(),
-                        cases.getJSONObject(i).getJSONObject("attributes").get("Date_of_Di").toString()));
+                Infected.add(
+                        new Infected(
+                                cases.getJSONObject(i).getJSONObject("properties").get("id").toString(),
+                                cases.getJSONObject(i).getJSONObject("properties").get("hospital").toString(),
+                                cases.getJSONObject(i).getJSONObject("properties").get("transmissionSource").toString(),
+                                cases.getJSONObject(i).getJSONObject("properties").get("placesVisited").toString(),
+                                cases.getJSONObject(i).getJSONObject("properties").get("age").toString(),
+                                cases.getJSONObject(i).getJSONObject("properties").get("gender").toString(),
+                                cases.getJSONObject(i).getJSONObject("properties").get("nationality").toString(),
+                                cases.getJSONObject(i).getJSONObject("properties").get("death").toString(),
+                                cases.getJSONObject(i).getJSONObject("properties").get("confirmed").toString(),
+                                cases.getJSONObject(i).getJSONObject("properties").get("discharged").toString()
+                        )
+                );
             } catch (JSONException e) {
                 e.printStackTrace();
             }
         }
-
         return Infected;
     }
 }

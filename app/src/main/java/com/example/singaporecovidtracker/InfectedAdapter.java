@@ -14,15 +14,14 @@ public class InfectedAdapter extends RecyclerView.Adapter<InfectedAdapter.ViewHo
     private Context context;
 
     static class ViewHolder extends RecyclerView.ViewHolder {
-        TextView idTextView, hospitalTextView, importedTextView, placeTextView, ageTextView, genderTextView, nationalityTextView, statusTextView, docTextView, dodTextView;
+        TextView idTextView, importedTextView, deathTextView, ageTextView, genderTextView, nationalityTextView, statusTextView, docTextView, dodTextView;
 
         ViewHolder(View itemView) {
             super(itemView);
 
             idTextView = itemView.findViewById(R.id.infected_id);
-            hospitalTextView = itemView.findViewById(R.id.infected_hospital);
             importedTextView = itemView.findViewById(R.id.infected_imported);
-            placeTextView = itemView.findViewById(R.id.infected_place);
+            deathTextView = itemView.findViewById(R.id.infected_death);
             ageTextView = itemView.findViewById(R.id.infected_age);
             genderTextView = itemView.findViewById(R.id.infected_gender);
             nationalityTextView = itemView.findViewById(R.id.infected_nationality);
@@ -57,12 +56,10 @@ public class InfectedAdapter extends RecyclerView.Adapter<InfectedAdapter.ViewHo
 
         TextView idtv = viewHolder.idTextView;
         idtv.setText(Infected.getId());
-        TextView hospitaltv = viewHolder.hospitalTextView;
-        hospitaltv.setText(context.getResources().getString(R.string.Hospital) + Infected.getHospital());
         TextView importedtv = viewHolder.importedTextView;
         importedtv.setText(context.getResources().getString(R.string.Type) + Infected.getImported());
-        TextView placetv = viewHolder.placeTextView;
-        placetv.setText(context.getResources().getString(R.string.Placesvisited) + Infected.getPlace());
+        TextView deathtv = viewHolder.deathTextView;
+        deathtv.setText(context.getResources().getString(R.string.Dodeath) + System.getProperty("line.separator") + Infected.getDeath());
         TextView agetv = viewHolder.ageTextView;
         agetv.setText(context.getResources().getString(R.string.Age) + Infected.getAge());
         TextView gendertv = viewHolder.genderTextView;
@@ -70,11 +67,16 @@ public class InfectedAdapter extends RecyclerView.Adapter<InfectedAdapter.ViewHo
         TextView nationalitytv = viewHolder.nationalityTextView;
         nationalitytv.setText(context.getResources().getString(R.string.Nationality) + Infected.getNationality());
         TextView statustv = viewHolder.statusTextView;
-        statustv.setText(Infected.getStatus());
+        if(!Infected.getDeath().equals(""))
+            statustv.setText("Dead");
+        else if (!Infected.getDateDischarged().equals(""))
+            statustv.setText("Discharged");
+        else
+            statustv.setText("Active");
         TextView doctv = viewHolder.docTextView;
-        doctv.setText(context.getResources().getString(R.string.Doc) + Infected.getDateContaminated());
+        doctv.setText(context.getResources().getString(R.string.Doc) + System.getProperty("line.separator") + Infected.getDateContaminated());
         TextView dodtv = viewHolder.dodTextView;
-        dodtv.setText(context.getResources().getString(R.string.Dod) + Infected.getDateDischarged());
+        dodtv.setText(context.getResources().getString(R.string.Dod) + System.getProperty("line.separator") + Infected.getDateDischarged());
     }
 
     @Override
